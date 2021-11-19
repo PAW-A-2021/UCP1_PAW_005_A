@@ -1,0 +1,74 @@
+﻿@model IEnumerable<UCP1_PAW_20190140005_A.Models.Sporty>
+
+@{
+    ViewData["Title"] = "Sepatu Sporty";
+}
+
+<h1>Sepatu Sporty</h1>
+
+<p>
+    <a asp-action="Create">Create Data Sepatu Sporty</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("StockSepatu")
+            </th>
+            <th>
+                @Html.DisplayName("NamaSepatu")
+            </th>
+            <th>
+                @Html.DisplayName("HargaSepatu")
+            </th>
+            <th>
+                @Html.DisplayName("JenisSepatu")
+            </th>
+            <th>
+                @Html.DisplayName("UkuranSepatu")
+            </th>
+            <th>
+                @Html.DisplayName("BrandSepatu")
+            </th>
+            <th>
+                @Html.DisplayName("IdSepatu")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StockSepatu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NamaSepatu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HargaSepatu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JenisSepatu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UkuranSepatu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrandSepatu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdSepatu1.IdSepatu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdSepatuNavigation.IdSepatu)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdSepatu"><i class="fa fa-marker fa-lg"></i></a>
+                <a asp-action="Details" asp-route-id="@item.IdSepatu"><i class="fas fa-list"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.IdSepatu"><i class="fa fa-trash-alt fa-lg"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

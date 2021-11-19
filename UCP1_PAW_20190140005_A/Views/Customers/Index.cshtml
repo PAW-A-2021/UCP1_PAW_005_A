@@ -1,0 +1,44 @@
+﻿@model IEnumerable<UCP1_PAW_20190140005_A.Models.Customer>
+
+@{
+    ViewData["Title"] = "Customer";
+}
+
+<h1>Customer</h1>
+
+<p>
+    <a asp-action="Create">Create Customer</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Username")
+            </th>
+            <th>
+                @Html.DisplayName("Keterangan")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdSepatuNavigation.IdSepatu)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdSepatu"><i class="fa fa-marker fa-lg"></i></a> |
+                <a asp-action="Details" asp-route-id="@item.IdSepatu"><i class="fas fa-list"></i></a> |
+                <a asp-action="Delete" asp-route-id="@item.IdSepatu"><i class="fa fa-trash-alt fa-lg"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

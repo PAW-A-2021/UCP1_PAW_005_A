@@ -1,0 +1,62 @@
+﻿@model UCP1_PAW_20190140005_A.Models.Sporty
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Sporty</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdSepatu" class="control-label"></label>
+                <select asp-for="IdSepatu" class ="form-control" asp-items="ViewBag.IdSepatu"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="StockSepatu" class="control-label"></label>
+                <input asp-for="StockSepatu" class="form-control" />
+                <span asp-validation-for="StockSepatu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NamaSepatu" class="control-label"></label>
+                <input asp-for="NamaSepatu" class="form-control" />
+                <span asp-validation-for="NamaSepatu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HargaSepatu" class="control-label"></label>
+                <input asp-for="HargaSepatu" class="form-control" />
+                <span asp-validation-for="HargaSepatu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JenisSepatu" class="control-label"></label>
+                <input asp-for="JenisSepatu" class="form-control" />
+                <span asp-validation-for="JenisSepatu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UkuranSepatu" class="control-label"></label>
+                <input asp-for="UkuranSepatu" class="form-control" />
+                <span asp-validation-for="UkuranSepatu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BrandSepatu" class="control-label"></label>
+                <input asp-for="BrandSepatu" class="form-control" />
+                <span asp-validation-for="BrandSepatu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
